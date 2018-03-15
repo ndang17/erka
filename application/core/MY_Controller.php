@@ -6,9 +6,6 @@ class MY_Controller extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        if(!$this->session->userdata('Login')){
-            redirect(base_url('admin'));
-        }
 
     }
 
@@ -21,8 +18,20 @@ class MY_Controller extends CI_Controller {
 
 
     public function template_admin($content){
-        $data['content'] = $content;
-        $this->load->view('admin/template_admin',$data);
+        if(!$this->session->userdata('Login')){
+            redirect(base_url('admin'));
+        } else {
+            $data['content'] = $content;
+            $this->load->view('admin/template_admin',$data);
+        }
+
+    }
+
+    public function getDateTimeNow(){
+        date_default_timezone_set('asia/jakarta');
+        $date = date("Y-m-d H:i:s");
+
+        return $date;
     }
 
 

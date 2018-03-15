@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="card mb-3">
+        <div class="card mb-1">
             <div class="card-header">
                 Add Slider
             </div>
@@ -192,11 +192,5 @@
         }
     }
 
-    function formatBytes(a,b) {
-        if(0==a)return"0 Bytes";
-        var c=1024,
-            d=b||2,
-            e=["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"],
-            f=Math.floor(Math.log(a)/Math.log(c));
-        return parseFloat((a/Math.pow(c,f)).toFixed(d))+" "+e[f]}
+
 </script>

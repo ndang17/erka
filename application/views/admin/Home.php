@@ -6,8 +6,6 @@
     <?php print_r($this->session->all_userdata()); ?>
 </pre>
 
-<script src="<?php echo base_url('assets/js/jquery-sortable.js'); ?>"></script>
-
 <style>
 .serialization li {
     border: 1px solid #ccc;

@@ -53,7 +53,7 @@ class A_users extends MY_Controller {
             return print_r(1);
         }
         else if($formData['action']=='reset') {
-            
+
             $pass = $this->genratePass($formData['Email'],$formData['NewPassword']);
 
             $set = array(

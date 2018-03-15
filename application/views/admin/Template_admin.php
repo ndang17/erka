@@ -44,6 +44,7 @@
     <script src="<?php echo base_url('assets/'); ?>moment/moment.js"></script>
     <script src="<?php echo base_url('assets/'); ?>toastr/toastr.min.js"></script>
 
+    <script src="<?php echo base_url('assets/js/jquery-sortable.js'); ?>"></script>
     <script>
         $(document).ready(function () {
             window.base_url_js = '<?php echo base_url(); ?>';
@@ -72,6 +73,38 @@
         function loadingButton(element) {
             $(element).prop('disabled',true).html('<i class="fa fa-refresh fa-spin fa-fw"></i> Loading...');
         }
+        function previewImageBeforeUpload(input,element) {
+
+            if (input.files && input.files[0]) {
+                var data = input.files[0];
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    // $('#previewPhotoSlider').attr('src', e.target.result);
+                    $(element).html('<table class="table table-bordered">' +
+                        '<tr>' +
+                        '<td colspan="2" style="text-align: center;">' +
+                        '<img id="" src="'+e.target.result+'" style="max-width: 250px;" />' +
+                        '</td>' +
+                        '</tr>' +
+                        '<tr>' +
+                        '<td>'+data.name+'</td>' +
+                        '<td style="width: 100px;">'+formatBytes(data.size,2)+'</td>' +
+                        '</tr>' +
+                        '</table>');
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function formatBytes(a,b) {
+            if(0==a)return"0 Bytes";
+            var c=1024,
+                d=b||2,
+                e=["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"],
+                f=Math.floor(Math.log(a)/Math.log(c));
+            return parseFloat((a/Math.pow(c,f)).toFixed(d))+" "+e[f]}
     </script>
 </head>
 
@@ -96,8 +129,8 @@
                     <span class="nav-link-text">About</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="tables.html">
+            <li class="nav-item <?php if($this->uri->segment(2)=='services'){ echo 'active';} ?>" data-toggle="tooltip" data-placement="right" title="Tables">
+                <a class="nav-link" href="<?php echo base_url('admin/services'); ?>">
                     <i class="fa fa-fw fa-wrench" aria-hidden="true"></i>
                     <span class="nav-link-text">Services</span>
                 </a>
