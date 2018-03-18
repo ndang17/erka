@@ -127,11 +127,18 @@
                         </a></h1>
                     <nav role="navigation">
                         <ul>
-                            <li class="<?php if($this->uri->segment(1)=='about-us'){echo 'active';} ?>"><a href="<?php echo base_url('about-us'); ?>">About Us</a></li>
-                            <li><a href="rent.html">Services</a></li>
-                            <li><a href="properties.html">Projects</a></li>
-                            <li><a href="properties.html">Teams</a></li>
-                            <li><a href="properties.html">Clients</a></li>
+                            <li class="<?php if($this->uri->segment(1)=='about-us'){echo 'active';} ?>">
+                                <a href="<?php echo base_url('about-us'); ?>">About Us</a></li>
+                            <li class="<?php if($this->uri->segment(1)=='services'){echo 'active';} ?>">
+                                <a href="<?php echo base_url('services'); ?>">Services</a></li>
+                            <li class="<?php if($this->uri->segment(1)=='projects'){echo 'active';} ?>">
+                                <a href="<?php echo base_url('projects'); ?>">Projects</a></li>
+                            <li class="<?php if($this->uri->segment(1)=='teams'){echo 'active';} ?>">
+                                <a href="<?php echo base_url('teams'); ?>">Teams</a></li>
+                            <li class="<?php if($this->uri->segment(1)=='clients'){echo 'active';} ?>">
+                                <a href="<?php echo base_url('clients'); ?>">Clients</a></li>
+                            <li class="<?php if($this->uri->segment(1)=='gallery'){echo 'active';} ?>">
+                                <a href="<?php echo base_url('gallery'); ?>">Gallery</a></li>
                             <li class="call"><a href="tel://123456789"><i class="icon-phone"></i> +1 123 456 789</a></li>
                             <li class="cta"><a href="javascript:void(0)" id="btnContact">Contact us</a></li>
                         </ul>

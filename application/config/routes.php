@@ -32,7 +32,11 @@ $route['admin/services/add-new-services'] = 'admin/a_services/add_new_services';
 
 
 // WEB
-$route['about-us'] = 'web/c_about';
+$route['about-us'] = 'web/c_web/about_us';
+$route['services'] = 'web/c_web/services';
+$route['projects'] = 'web/c_web/projects';
+$route['teams'] = 'web/c_web/teams';
+$route['gallery'] = 'web/c_web/gallery';
 
 
 $route['action/services/__addNewServices'] = 'admin/a_services/addNewServices';

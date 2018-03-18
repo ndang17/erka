@@ -100,7 +100,7 @@ CREATE TABLE `users` (
 /*Data for the table `users` */
 
 insert  into `users`(`ID`,`Name`,`Email`,`Password`,`LastLogin`,`Status`,`UpdateBy`,`UpdateAt`) values 
-(1,'Nandang','nndg.ace3@gmail.com','47aa7631f0864bd9e6869de450d476964e07dc83','2018-03-15 19:53:11','0',NULL,NULL),
+(1,'Nandang','nndg.ace3@gmail.com','47aa7631f0864bd9e6869de450d476964e07dc83','2018-03-17 20:32:13','0',NULL,NULL),
 (4,'Nandang 4','nndg.m94@gmail.com','9289ab660041422fc031e3f50866828b0c5066dd','2018-03-13 01:08:08','1','nndg.m94@gmail.com','2018-03-13 01:07:47'),
 (8,'nandang','nndg@gmail.com','f28ffa2f0518da1f788e9aff723138336a08cc83','2018-03-13 01:00:43','1','nndg.ace3@gmail.com','2018-03-13 00:38:41');
 
